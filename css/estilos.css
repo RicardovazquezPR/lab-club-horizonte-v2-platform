@@ -120,3 +120,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .actividades { grid-template-columns: repeat(2, 1fr); }
   h1 { font-size: 2rem; }
 }
+
+/* DEV0003 REQ-005/REQ-006: formulario de inscripcion y estado Agotada.
+   Antes: no existia. Si se quita: select y plazas pierden formato; el estado agotada deja de destacarse. */
+.campo select { width: 100%; font: inherit; padding: 0.5rem 0.6rem; border: 1px solid #9aa5b1; border-radius: 6px; background: #fff; }
+.campo input:disabled, .boton:disabled { opacity: 0.6; cursor: not-allowed; }
+.plazas { margin: 0.4rem 0 0; font-weight: 700; color: #1e5631; }
+.plazas.agotada { color: #b42318; }
+.tabla-resumen { width: 100%; border-collapse: collapse; background: #fff; }
+.tabla-resumen th, .tabla-resumen td { border: 1px solid #d9e2ec; padding: 0.4rem 0.5rem; text-align: left; }
+.tabla-resumen th { background: #e6eef7; }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscripción · Club de Estudiantes Horizonte</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- DEV0003 REQ-005..REQ-007, REQ-009: formulario de inscripcion. Logica en js/inscripcion.js;
+       js/inscripcion-ui.js solo toca el DOM. Los datos se guardan en localStorage, no se envian a ningun sitio. -->
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <p class="marca"><a href="index.html">Club de Estudiantes Horizonte</a></p>
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="actividades.html">Próximas actividades</a></li>
+        <li><a href="calendario.html">Calendario</a></li>
+        <li><a href="inscripcion.html" aria-current="page">Inscripción</a></li>
+        <li><a href="resumen.html">Resumen</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <h1>Inscripción en una actividad</h1>
+    <p id="mensaje-carga" class="aviso-error" role="alert" hidden></p>
+
+    <form id="form-inscripcion" novalidate>
+      <div class="campo">
+        <label for="actividad">Actividad</label>
+        <select id="actividad" name="actividad" aria-describedby="plazas"></select>
+        <p id="plazas" class="plazas" role="status"></p>
+      </div>
+      <div class="campo">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" aria-describedby="error-nombre">
+        <p class="error" id="error-nombre" hidden></p>
+      </div>
+      <div class="campo">
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" name="correo" type="email" autocomplete="email" aria-describedby="error-correo">
+        <p class="error" id="error-correo" hidden></p>
+      </div>
+      <div class="campo">
+        <label for="estudiante">Número de estudiante</label>
+        <input id="estudiante" name="estudiante" type="text" autocomplete="off" aria-describedby="error-estudiante">
+        <p class="error" id="error-estudiante" hidden></p>
+      </div>
+      <button type="submit" class="boton" id="enviar">Inscribirme</button>
+      <p id="exito-inscripcion" class="exito" role="status" hidden></p>
+      <p id="error-general" class="error" role="alert" hidden></p>
+    </form>
+
+    <p class="aviso-ficticio">Las inscripciones se guardan solo en este navegador (no se envían a ningún servidor) y no se sincronizan entre dispositivos. Sitio de prueba: todos los datos son ficticios.</p>
+  </main>
+
+  <footer class="pie">Club de Estudiantes Horizonte · sitio de prueba</footer>
+
+  <script src="js/calendario.js"></script>
+  <script src="js/inscripcion.js"></script>
+  <script src="js/inscripcion-ui.js"></script>
+</body>
+</html>
