@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario de actividades · Club de Estudiantes Horizonte</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- DEV0003 REQ-001..REQ-004, REQ-009: calendario. Las actividades se leen de datos/actividades.json
+       (js/calendario.js = logica, js/calendario-ui.js = DOM). Sin recursos externos. -->
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <p class="marca"><a href="index.html">Club de Estudiantes Horizonte</a></p>
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="actividades.html">Próximas actividades</a></li>
+        <li><a href="calendario.html" aria-current="page">Calendario</a></li>
+        <li><a href="inscripcion.html">Inscripción</a></li>
+        <li><a href="resumen.html">Resumen</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <h1>Calendario de actividades</h1>
+
+    <p id="mensaje-calendario" class="aviso-error" role="alert" hidden></p>
+
+    <div class="barra-calendario">
+      <fieldset class="filtros" id="filtros">
+        <legend>Filtrar por categoría</legend>
+        <span id="lista-categorias"></span>
+        <button type="button" class="boton secundario" id="quitar-filtros">Quitar filtros</button>
+      </fieldset>
+      <div class="vistas" role="group" aria-label="Tipo de vista">
+        <button type="button" class="boton" id="ver-mes" aria-pressed="true">Vista de mes</button>
+        <button type="button" class="boton" id="ver-lista" aria-pressed="false">Vista de lista</button>
+      </div>
+    </div>
+
+    <section id="vista-mes" aria-labelledby="titulo-mes">
+      <div class="nav-mes">
+        <button type="button" class="boton" id="mes-anterior">Mes anterior</button>
+        <h2 id="titulo-mes" aria-live="polite"></h2>
+        <button type="button" class="boton" id="mes-siguiente">Mes siguiente</button>
+      </div>
+      <p id="mes-vacio" class="aviso-vacio" hidden>
+        No hay actividades este mes.
+        <button type="button" class="boton secundario" id="ir-proximo" hidden>Ir al próximo mes con actividades</button>
+      </p>
+      <div class="tabla-mes">
+        <table id="tabla-mes">
+          <caption class="solo-lectores">Actividades del mes</caption>
+          <thead>
+            <tr>
+              <th scope="col"><abbr title="Lunes">L</abbr></th><th scope="col"><abbr title="Martes">M</abbr></th>
+              <th scope="col"><abbr title="Miércoles">X</abbr></th><th scope="col"><abbr title="Jueves">J</abbr></th>
+              <th scope="col"><abbr title="Viernes">V</abbr></th><th scope="col"><abbr title="Sábado">S</abbr></th>
+              <th scope="col"><abbr title="Domingo">D</abbr></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="vista-lista" aria-labelledby="titulo-lista" hidden>
+      <h2 id="titulo-lista">Todas las actividades, por fecha</h2>
+      <ol id="lista" class="lista-eventos"></ol>
+      <p id="lista-vacia" class="aviso-vacio" hidden>No hay actividades con esos filtros.</p>
+    </section>
+
+    <section id="detalle" class="detalle" aria-live="polite" aria-labelledby="titulo-detalle" hidden>
+      <h2 id="titulo-detalle">Detalle de la actividad</h2>
+      <div id="detalle-contenido"></div>
+    </section>
+
+    <p class="aviso-ficticio">Sitio de prueba: las actividades, fechas y lugares son ficticios.</p>
+  </main>
+
+  <footer class="pie">Club de Estudiantes Horizonte · sitio de prueba</footer>
+
+  <script src="js/calendario.js"></script>
+  <script src="js/calendario-ui.js"></script>
+</body>
+</html>

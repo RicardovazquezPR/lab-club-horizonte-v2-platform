@@ -73,6 +73,45 @@ h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
 .aviso-ficticio { font-size: 0.85rem; color: #52606d; border-left: 4px solid #f0b429; background: #fffbea; padding: 0.5rem 0.75rem; margin: 1rem 0; }
 .pie { text-align: center; color: #52606d; font-size: 0.85rem; padding: 1rem; }
 
+/* DEV0003 REQ-002..REQ-004, REQ-009: calendario, vistas, filtros y detalle.
+   Antes: no existian estas clases. Si se quitan: el calendario pierde la cuadricula y los controles quedan sin formato. */
+.solo-lectores { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.salto { position: absolute; left: -999px; top: 0; background: #fff; color: #1d4e89; padding: 0.5rem 1rem; z-index: 10; }
+.salto:focus { left: 0; }
+.boton.secundario { background: #fff; color: #1d4e89; border: 2px solid #1d4e89; }
+.enlace-boton { display: inline-block; text-decoration: none; }
+.boton[aria-pressed="true"] { background: #102a43; }
+.boton:hover { background: #163a66; }
+.boton.secundario:hover { background: #e6eef7; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+.aviso-error { background: #fde8e8; border-left: 4px solid #b42318; color: #7a1a12; font-weight: 700; padding: 0.6rem 0.75rem; margin: 1rem 0; }
+.aviso-error[hidden], .detalle[hidden] { display: none; }
+.barra-calendario { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; margin: 1rem 0; }
+.filtros { border: 1px solid #9aa5b1; border-radius: 8px; padding: 0.5rem 0.75rem; background: #fff; margin: 0; min-width: 0; }
+.filtros legend { font-weight: 700; padding: 0 0.25rem; }
+.filtro { display: inline-block; margin: 0 0.75rem 0.25rem 0; }
+.vistas { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.nav-mes { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.nav-mes h2 { margin: 0.5rem 0; }
+.tabla-mes { overflow-x: auto; }
+#tabla-mes { width: 100%; border-collapse: collapse; table-layout: fixed; background: #fff; }
+#tabla-mes th { background: #e6eef7; padding: 0.35rem; border: 1px solid #bcccdc; }
+#tabla-mes td { vertical-align: top; border: 1px solid #d9e2ec; height: 4.5rem; padding: 0.15rem; }
+#tabla-mes td.fuera { background: #f0f4f8; color: #627d98; }
+.num-dia { display: block; font-size: 0.8rem; font-weight: 700; }
+.evento { display: block; width: 100%; text-align: left; font: inherit; font-size: 0.75rem; margin: 0.15rem 0; padding: 0.2rem 0.3rem; background: #e6eef7; border: 1px solid #1d4e89; border-radius: 4px; color: #102a43; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.evento:hover { background: #cfe0f3; }
+.cat-1 { background: #e3f4e8; border-color: #1e7e34; } .cat-2 { background: #fff3d6; border-color: #8a5a00; } .cat-3 { background: #f3e5f5; border-color: #6a1b9a; }
+.lista-eventos { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.lista-eventos .evento { font-size: 1rem; white-space: normal; padding: 0.6rem 0.75rem; }
+.detalle { background: #fff; border: 2px solid #1d4e89; border-radius: 8px; padding: 0.75rem 1rem; margin: 1rem 0; }
+.detalle h3 { margin: 0 0 0.5rem; }
+@media (max-width: 39.99rem) {
+  #tabla-mes td { height: 3.5rem; }
+  .evento .texto-evento { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .evento { font-size: 0.65rem; padding: 0.3rem 0.1rem; text-align: center; }
+}
+
 @media (min-width: 40rem) {
   .cabecera { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .cabecera .marca { margin: 0; }
