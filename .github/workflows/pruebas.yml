@@ -1,0 +1,22 @@
+# DEV0003 REQ-010: corre la bateria de pruebas con cada push y cada pull request.
+# Antes: no habia flujo de Actions. Si se quita: nada avisa de un cambio que rompa el calendario,
+# la inscripcion o el CSV antes de publicarlo. Sin dependencias: solo Node.
+name: pruebas
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pruebas automaticas
+        run: npm test
