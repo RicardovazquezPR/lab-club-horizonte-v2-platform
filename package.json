@@ -1,0 +1,9 @@
+{
+  "name": "club-horizonte-v2",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Sitio estático del Club Horizonte (DEV0003). Sin dependencias.",
+  "scripts": {
+    "test": "node --test pruebas/*.test.js && node pruebas/prueba-fechas.js && node pruebas/prueba-contacto.js"
+  }
+}
