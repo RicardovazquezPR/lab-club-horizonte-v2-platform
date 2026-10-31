@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen de inscripciones · Club de Estudiantes Horizonte</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- DEV0003 REQ-008, REQ-009: resumen por actividad y exportacion a CSV. Lee las inscripciones de localStorage
+       (solo las de este navegador). Logica en js/exportar.js; js/resumen-ui.js solo toca el DOM. -->
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <p class="marca"><a href="index.html">Club de Estudiantes Horizonte</a></p>
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="actividades.html">Próximas actividades</a></li>
+        <li><a href="calendario.html">Calendario</a></li>
+        <li><a href="inscripcion.html">Inscripción</a></li>
+        <li><a href="resumen.html" aria-current="page">Resumen</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <h1>Resumen de inscripciones</h1>
+    <p id="mensaje-carga" class="aviso-error" role="alert" hidden></p>
+    <p><button type="button" class="boton" id="exportar-csv">Exportar a CSV</button></p>
+    <p id="total" role="status"></p>
+    <div id="resumen"></div>
+    <p class="aviso-ficticio">Se muestran solo las inscripciones guardadas en este navegador. El CSV usa «;» como separador y codificación UTF-8 con BOM para abrirse en Excel con los acentos correctos. Sitio de prueba: datos ficticios.</p>
+  </main>
+
+  <footer class="pie">Club de Estudiantes Horizonte · sitio de prueba</footer>
+
+  <script src="js/calendario.js"></script>
+  <script src="js/inscripcion.js"></script>
+  <script src="js/exportar.js"></script>
+  <script src="js/resumen-ui.js"></script>
+</body>
+</html>
